@@ -1,0 +1,61 @@
+{
+	"name": "swapcase",
+	"version": "0.0.0",
+	"description": "A letter case swapper with full Unicode support, i.e. based on the official Unicode case folding mappings.",
+	"homepage": "http://mths.be/swapcase",
+	"main": "swapcase.js",
+	"bin": "bin/swapcase",
+	"keywords": [
+		"string",
+		"case-folding",
+		"case-fold",
+		"swap case",
+		"case-swap",
+		"unicode"
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://mths.be/mit"
+		}
+	],
+	"author": {
+		"name": "Mathias Bynens",
+		"url": "http://mathiasbynens.be/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mathiasbynens/swapcase.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mathiasbynens/swapcase/issues"
+	},
+	"files": [
+		"LICENSE-MIT.txt",
+		"swapcase.js",
+		"bin/",
+		"man/"
+	],
+	"directories": {
+		"bin": "bin",
+		"man": "man",
+		"test": "tests"
+	},
+	"scripts": {
+		"test": "node tests/tests.js"
+	},
+	"devDependencies": {
+		"coveralls": "^2.10.0",
+		"grunt": "^0.4.5",
+		"grunt-shell": "^0.7.0",
+		"grunt-template": "^0.2.3",
+		"istanbul": "^0.2.10",
+		"jsesc": "^0.4.3",
+		"lodash": "^2.4.1",
+		"qunit-extras": "^1.1.0",
+		"qunitjs": "~1.11.0",
+		"regenerate": "^0.6.2",
+		"requirejs": "^2.1.11",
+		"unicode-6.3.0": "^0.1.5"
+	}
+}

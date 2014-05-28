@@ -1,0 +1,97 @@
+#!/usr/bin/env node
+(function() {
+
+	var fs = require('fs');
+	var swapCase = require('../swapcase.js');
+	var strings = process.argv.splice(2);
+	var stdin = process.stdin;
+	var data;
+	var timeout;
+	var options = {};
+	var log = console.log;
+
+	var main = function() {
+		var option = strings[0];
+		var count = 0;
+
+		if (/^(?:-h|--help|undefined)$/.test(option)) {
+			log(
+				'swapcase v%s - http://mths.be/swapcase',
+				swapCase.version
+			);
+			log([
+				'\nUsage:\n',
+				'\tswapcase string',
+				'\tswapcase [-v | --version]',
+				'\tswapcase [-h | --help]',
+				'\nExamples:\n',
+				'\tswapcase \'abcdef\'',
+				'\techo \'&copy; &#x1D306;\' | swapCase --decode'
+			].join('\n'));
+			return process.exit(1);
+		}
+
+		if (/^(?:-v|--version)$/.test(option)) {
+			log('v%s', swapCase.version);
+			return process.exit(1);
+		}
+
+		strings.forEach(function(string) {
+			// Process string(s)
+			var result;
+			try {
+				result = swapCase(string);
+				log(result);
+				count++;
+			} catch (exception) {
+				log(exception.message + '\n');
+				log('Error: failed to case-swap.');
+				log('If you think this is a bug in swapcase, please report it:');
+				log('https://github.com/mathiasbynens/swapcase/issues/new');
+				log(
+					'\nStack trace using swapcase@%s:\n',
+					swapCase.version
+				);
+				log(exception.stack);
+				return process.exit(1);
+			}
+		});
+		if (!count) {
+			log('Error: swapcase requires a string argument.');
+			log('Try `swapcase --help` for more information.');
+			return process.exit(1);
+		}
+		// Return with exit status 0 outside of the `forEach` loop, in case
+		// multiple strings were passed in.
+		return process.exit(0);
+	};
+
+	if (stdin.isTTY) {
+		// handle shell arguments
+		main();
+	} else {
+		// Either the script is called from within a non-TTY context, or `stdin`
+		// content is being piped in.
+		if (!process.stdout.isTTY) {
+			// The script was called from a non-TTY context. This is a rather uncommon
+			// use case we don’t actively support. However, we don’t want the script
+			// to wait forever in such cases, so…
+			timeout = setTimeout(function() {
+				// …if no piped data arrived after a whole minute, handle shell
+				// arguments instead.
+				main();
+			}, 60000);
+		}
+		data = '';
+		stdin.on('data', function(chunk) {
+			clearTimeout(timeout);
+			data += chunk;
+		});
+		stdin.on('end', function() {
+			strings.push(data.trim());
+			main();
+		});
+		stdin.resume();
+	}
+
+}());

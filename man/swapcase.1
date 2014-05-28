@@ -1,0 +1,50 @@
+.Dd May 28, 2014
+.Dt swapcase 1
+.Sh NAME
+.Nm swapcase
+.Nd swap the case of letters in a string
+.Sh SYNOPSIS
+.Nm
+.Op Ar string
+.br
+.Op Fl v | -version
+.br
+.Op Fl h | -help
+.Sh DESCRIPTION
+.Nm
+swaps the case of letters in a string.
+.Sh OPTIONS
+.Bl -ohang -offset
+.It Sy "-v, --version"
+Print swapcase's version.
+.It Sy "-h, --help"
+Show the help screen.
+.El
+.Sh EXIT STATUS
+The
+.Nm swapcase
+utility exits with one of the following values:
+.Pp
+.Bl -tag -width flag -compact
+.It Li 0
+.Nm
+successfully encoded/decoded the input and printed the result.
+.It Li 1
+.Nm
+wasn't instructed to encode/decode anything (for example, the
+.Ar --help
+flag was set); or, an error occurred.
+.El
+.Sh EXAMPLES
+.Bl -ohang -offset
+.It Sy "swapcase 'aBcDeFg'"
+Print the case-swapped version of the given string.
+.It Sy "echo\ 'aBcDeFg'\ |\ swapcase"
+Print the case-swapped version of the string that gets piped in.
+.El
+.Sh BUGS
+swapcase's bug tracker is located at <https://github.com/mathiasbynens/swapcase/issues>.
+.Sh AUTHOR
+Mathias Bynens <http://mathiasbynens.be/>
+.Sh WWW
+<http://mths.be/swapcase>
