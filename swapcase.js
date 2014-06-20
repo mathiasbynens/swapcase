@@ -1,4 +1,4 @@
-/*! http://mths.be/swapcase v0.1.0 by @mathias | MIT license */
+/*! http://mths.be/swapcase v0.2.0 by @mathias | MIT license */
 ;(function(root) {
 
 	// Detect free variables `exports`.
@@ -27,7 +27,7 @@
 		});
 	};
 
-	swapCase.version = '0.1.0';
+	swapCase.version = '0.2.0';
 
 	// Some AMD build optimizers, like r.js, check for specific condition patterns
 	// like the following:
