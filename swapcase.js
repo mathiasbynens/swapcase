@@ -1,4 +1,4 @@
-/*! http://mths.be/swapcase v0.2.0 by @mathias | MIT license */
+/*! https://mths.be/swapcase v0.2.0 by @mathias | MIT license */
 ;(function(root) {
 
 	// Detect free variables `exports`.

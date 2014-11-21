@@ -16,7 +16,7 @@
 
 		if (/^(?:-h|--help|undefined)$/.test(option)) {
 			log(
-				'swapcase v%s - http://mths.be/swapcase',
+				'swapcase v%s - https://mths.be/swapcase',
 				swapCase.version
 			);
 			log([
