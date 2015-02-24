@@ -4,7 +4,7 @@ _swapcase_ is a letter case swapper with full Unicode support, i.e. based on [th
 
 ## Installation
 
-Via [npm](http://npmjs.org/):
+Via [npm](https://www.npmjs.com/):
 
 ```bash
 npm install swapcase
@@ -28,7 +28,7 @@ In a browser:
 <script src="swapcase.js"></script>
 ```
 
-In [Narwhal](http://narwhaljs.org/), [Node.js](http://nodejs.org/), and [RingoJS](http://ringojs.org/):
+In [Narwhal](http://narwhaljs.org/), [Node.js](https://nodejs.org/), and [RingoJS](http://ringojs.org/):
 
 ```js
 var swapCase = require('swapcase');
