@@ -22,8 +22,8 @@ var _ = require('lodash');
 //  A. To do a simple case folding, use the mappings with status C + S.
 //  B. To do a full case folding, use the mappings with status C + F.
 
-var commonMappings = require('unicode-7.0.0/case-folding/C/symbols');
-var fullMappings = require('unicode-7.0.0/case-folding/F/symbols');
+var commonMappings = require('unicode-8.0.0/case-folding/C/symbols');
+var fullMappings = require('unicode-8.0.0/case-folding/F/symbols');
 
 // We want the `C` mappings in both directions (i.e. `A` should swap to `a`
 // and `a` to `A`), and the `F` mappings as they are but not in the other
