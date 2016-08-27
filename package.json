@@ -1,6 +1,6 @@
 {
 	"name": "swapcase",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "A letter case swapper with full Unicode support, i.e. based on the official Unicode case folding mappings.",
 	"homepage": "https://mths.be/swapcase",
 	"main": "swapcase.js",
